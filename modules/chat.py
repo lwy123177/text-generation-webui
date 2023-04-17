@@ -77,10 +77,7 @@ def generate_chat_prompt(user_input, state, **kwargs):
 
 
 def get_stopping_strings(state):
-    if state['mode'] == 'instruct':
-        stopping_strings = [f"\n{state['name1']}", f"\n{state['name2']}"]
-    else:
-        stopping_strings = [f"\n{state['name1']}:", f"\n{state['name2']}:"]
+    stopping_strings = [f"\n{state['name1']}", f"\n{state['name2']}"]
     stopping_strings += ast.literal_eval(f"[{state['custom_stopping_strings']}]")
     return stopping_strings
 
