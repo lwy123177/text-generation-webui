@@ -37,7 +37,7 @@ settings = {
     'context': 'This is a conversation with your Assistant. The Assistant is very helpful and is eager to chat with you and answer your questions.',
     'greeting': '',
     'end_of_turn': '',
-    'custom_stopping_strings': '',
+    'custom_stopping_strings': '### ',
     'stop_at_newline': False,
     'add_bos_token': True,
     'ban_eos_token': False,
