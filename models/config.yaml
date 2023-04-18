@@ -27,7 +27,7 @@ llama-[0-9]*b-4bit$:
 .*vicuna:
   mode: 'instruct'
   instruction_template: 'Vicuna'
-  custom_stopping_strings: '"### ", "### 2"'
+  custom_stopping_strings: '"### Assistant", "### Human"'
 .*alpaca:
   mode: 'instruct'
   instruction_template: 'Alpaca'
