@@ -69,7 +69,7 @@ def generate_chat_prompt(user_input, state, **kwargs):
     while len(rows) > min_rows and len(encode(''.join(rows))[0]) >= max_length:
         rows.pop(1)
     prompt = ''.join(rows)
-    print(promot)
+    print(prompt)
     if also_return_rows:
         return prompt, rows
     else:
