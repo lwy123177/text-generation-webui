@@ -80,7 +80,7 @@ class Handler(BaseHTTPRequestHandler):
                 else:
                     answer = a[0]
             
-            for stop_string in body.get('custom_stopping_strings', []):
+            for stop_string in body.get('custom_stopping_strings_to_answer', []):
                 if stop_string in answer:
                     answer = answer[:answer.index(stop_string)]
 
