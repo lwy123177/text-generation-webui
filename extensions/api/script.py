@@ -14,6 +14,7 @@ class Handler(BaseHTTPRequestHandler):
     def do_GET(self):
         if self.path == '/api/v1/model':
             self.send_response(200)
+            self.send_header('Access-Control-Allow-Origin', '*')
             self.end_headers()
             response = json.dumps({
                 'result': shared.model_name
@@ -30,6 +31,7 @@ class Handler(BaseHTTPRequestHandler):
         if self.path == '/api/v1/generate':
             self.send_response(200)
             self.send_header('Content-Type', 'application/json')
+            self.send_header('Access-Control-Allow-Origin', '*')
             self.end_headers()
 
             prompt = body['prompt']
@@ -86,6 +88,7 @@ class Handler(BaseHTTPRequestHandler):
             # Not compatible with KoboldAI api
             self.send_response(200)
             self.send_header('Content-Type', 'application/json')
+            self.send_header('Access-Control-Allow-Origin', '*')
             self.end_headers()
 
             tokens = encode(body['prompt'])[0]
