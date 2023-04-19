@@ -77,6 +77,10 @@ class Handler(BaseHTTPRequestHandler):
                     answer = a
                 else:
                     answer = a[0]
+            
+            for stop_string in body.get('custom_stopping_strings', []):
+                if stop_string in answer:
+                    answer = answer[:answer.index(stop_string)]
 
             response = json.dumps({
                 'results': [{
