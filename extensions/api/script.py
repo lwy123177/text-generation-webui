@@ -91,7 +91,7 @@ class Handler(BaseHTTPRequestHandler):
                 if stop_string in answer:
                     answer = answer[:answer.index(stop_string)]
             
-            print(answer)
+            print("answer", answer)
             
             response = json.dumps({
                 'results': [{
