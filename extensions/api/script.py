@@ -88,10 +88,11 @@ class Handler(BaseHTTPRequestHandler):
                     answer = a[0]
             
             for stop_string in body.get('custom_stopping_strings_to_answer', '').split(','):
-                print(stop_string)
                 if stop_string in answer:
                     answer = answer[:answer.index(stop_string)]
-
+            
+            print(answer)
+            
             response = json.dumps({
                 'results': [{
                     'text': answer
